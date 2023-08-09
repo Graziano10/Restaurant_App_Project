@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Restaurant</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <!-- PRENOTATION USER-->
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col h-full">
+            <div class="flex flex-row justify-between text-base block text-grey-darker text-sm font-bold mb-2">
+                <div class="flex flex-row">
+                    <h1>Persone:<span id="count" class="mx-1"> 2</span>
+                        <div class="flex gap-1">
+                            <button id="add"
+                                class="rounded-md h-6 w-6 p-2 border flex justify-center items-center">+</button>
+                            <button id="sub"
+                                class="rounded-md h-6 w-6 p-2 border flex justify-center items-center">-</button>
+                        </div>
+                    </h1>
+                </div>
+                <h1 id="table">Tavolo Prenotato: <span>...</span></h1>
+            </div>
+
+            <!-- GRID -->
+
+            <div class="flex justify-center items-center h-100% w-full my-10">
+                <div class="grid grid-rows-2 grid-flow-col gap-10 w-full flex justify-center items-center">
+                    <div id="table01" free="true"
+                        class="free border w-20 h-20 flex justify-center items-center bg-green-400 hover:bg-green-500 rounded-md notFree">
+                        01</div> <!-- FREE -->
+                    <div id="table02" free="true"
+                        class="border w-20 h-20 flex justify-center items-center bg-red-500 hover:bg-red-600 rounded-md notFree">
+                        02</div> <!-- FREE -->
+                    <div id="table03" free="true"
+                        class="border w-20 h-20 flex justify-center items-center bg-red-500 hover:bg-red-600 rounded-md notFree">
+                        03</div> <!-- FREE -->
+                    <div id="table04" free="true"
+                        class="border w-20 h-20 flex justify-center items-center bg-green-400 hover:bg-green-500 rounded-md hover:w-24 free">
+                        04</div> <!-- NOT -->
+                    <div id="table05" free="true"
+                        class="border w-20 h-20 flex justify-center items-center bg-green-400 hover:bg-green-500 rounded-md free">
+                        05</div> <!-- NOT -->
+                    <div id="table06" free="true"
+                        class="border w-20 h-20 flex justify-center items-center bg-red-500 hover:bg-red-600 rounded-md notFree">
+                        06</div> <!-- FREE -->
+                </div>
+            </div>
+
+            <!-- FORM PRENOTATION -->
+
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+                    Username
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username"
+                    type="text" placeholder="Username" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
+                    E-mail
+                </label>
+                <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+                    id="email" type="email" placeholder="exemple@exemple.com" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="date">
+                    Orario
+                </label>
+                <input class="border p-2" type="time" id="event_datetime" name="event_datetime" required><br><br>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
+                    type="button">
+                    Prenota
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>
