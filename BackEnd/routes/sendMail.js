@@ -1,27 +1,28 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const emailjs = require('emailjs');
 
 const app = express();
 
 
-// Middleware per servire file JSON
-app.get('/', (req, res) => {
-
-
-});
-
-app.use('/fileJson', (req, res) => {
-    // Invia una risposta con uno status code personalizzato e un messaggio
-    res.status(201).send('This is a custom route.');
-});
-
-
-// Send Mail EmailJS
-app.post('/send-email', (req, res) => {
+// Configurazione emailjs
+const emailServer = emailjs.server.connect({
+    user: email,
+    password: password,
+    host: host_email,
+    ssl: true
+  });
+  
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  
+  // Route per l'invio dell'email
+  app.post('/send-email', (req, res) => {
     const { to_email, subject, message } = req.body;
   
     const emailData = {
       text: message,
-      from: email,
+      from: 'your_email@example.com',
       to: to_email,
       subject: subject
     };
@@ -36,10 +37,4 @@ app.post('/send-email', (req, res) => {
       }
     });
   });
-
-
-
-// Avvio del server
-app.listen(3000, () => {
-  console.log("Server up and running on http://localhost:3000...");
-})
+  
