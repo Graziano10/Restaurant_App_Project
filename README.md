@@ -1,7 +1,10 @@
-# Restaurant_Project
+# Restaurant_Project_JavaScript
 
-App / Website for restaurant table reservation.
+App/website for booking tables at the restaurant with email confirmations.
 
 Technologies used: 
-
-                    HTML, Tailwind CSS, JavaScript.
+                  -HTML
+                  -Tailwind CSS
+                  -JavaScript
+Tools:
+      -EmailJs
